@@ -1,11 +1,9 @@
-from django.shortcuts import render
 from django.http import HttpResponse
 
 
 # Create your views here.
 
 def cars_view(request):
-    
     html = '''
         <html>
         <head>
@@ -14,8 +12,7 @@ def cars_view(request):
         <body>
             <h1> Carros da PycodeBR </h1>
             <h3> Só carro top </h3>
-        </body>    
+        </body>
         </html>
     '''
-    
     return HttpResponse(html)
