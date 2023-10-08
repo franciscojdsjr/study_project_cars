@@ -1,14 +1,5 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'cars.css' %}">
-  <title>Carros</title>
-</head>
-<body>
-  {% block content %}
+{% extends "base.html" %}
+{% block content %}
   <form method="GET" action="{% url 'cars_list' %}">
     <input type="text" name="search" placeholder="Buscar carro...">
     <button type="submit">Buscar</button>
@@ -18,7 +9,7 @@
     {% if cars %}
       {% for car in cars %}
         <div class="car-card">
-          <img src="{% if car.photo %}  {{ car.photo.url }} {% endif %}" alt="{{ car.model }} - {{ car.brand }}"> 
+          <img src="{% if car.photo %}  {{ car.photo.url }} {% endif %}" alt="{{ car.model }} - {{ car.brand }}">
           <h2>{{ car.brand }} {{ car.model }}</h2>
           <p>{{ car.factory_year }} - R$ {{ car.value }}</p>
         </div>
@@ -28,6 +19,3 @@
     {% endif %}
   </div>
 {% endblock %}
-</body>
-</html>
-
