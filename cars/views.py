@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from cars.models import Car
+from cars.forms import CarForm
 
 # Create your views here.
 # Order_by com - no inicio ordena decrecente (-model)
@@ -17,4 +18,5 @@ def cars_view(request):
 
 
 def new_car_view(request):
-    return 'Novo Carro'
+    new_car_form = CarForm()
+    return render(request, 'new_car.html', {'new_car_form': new_car_form})
