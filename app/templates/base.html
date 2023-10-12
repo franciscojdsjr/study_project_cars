@@ -1,11 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'cars.css' %}">
-  <link rel="stylesheet" href="{% static 'base.css' %}">
+  {% comment %} <link rel="stylesheet" href="{% static 'cars.css' %}"> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'css/base.css' %}">
   <title>{% block title %}{% endblock %}</title>
   <style>
    
@@ -16,6 +16,7 @@
     <nav>
       <ul>
         <li><a href="{% url 'cars_list' %}">Carros</a></li>
+        <li><a href="{% url 'new_car' %}">Cadastrar Carro</a></li>
       </ul>
     </nav>
   </header>

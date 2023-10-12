@@ -1,21 +1,31 @@
 {% extends "base.html" %}
-{% block content %}
-  <form method="GET" action="{% url 'cars_list' %}">
-    <input type="text" name="search" placeholder="Buscar carro...">
-    <button type="submit">Buscar</button>
-  </form>
+{% load static %}
 
-  <div class="car-grid">
-    {% if cars %}
-      {% for car in cars %}
-        <div class="car-card">
-          <img src="{% if car.photo %}  {{ car.photo.url }} {% endif %}" alt="{{ car.model }} - {{ car.brand }}">
-          <h2>{{ car.brand }} {{ car.model }}</h2>
-          <p>{{ car.factory_year }} - R$ {{ car.value }}</p>
-        </div>
-      {% endfor %}
-    {% else %}
-      <p class="no-results">Nenhum carro encontrado.</p>
-    {% endif %}
-  </div>
+
+{% block content %}
+  <head>
+    <link rel="stylesheet" href="{% static 'css/cars.css' %}">
+  </head>
+  <body>
+    
+    <form method="GET" action="{% url 'cars_list' %}">
+      <input type="text" name="search" placeholder="Buscar carro...">
+      <button type="submit">Buscar</button>
+    </form>
+  
+    <div class="car-grid">
+      {% if cars %}
+        {% for car in cars %}
+          <div class="car-card">
+            <img src="{% if car.photo %}  {{ car.photo.url }} {% else %} {% static 'assets/no_picture.jpeg' %} {% endif %}" alt="{{ car.model }} - {{ car.brand }}">
+            <h2>{{ car.brand }} {{ car.model }}</h2>
+            <p>{{ car.factory_year }} - R$ {{ car.value }}</p>
+          </div>
+        {% endfor %}
+      {% else %}
+        <p class="no-results">Nenhum carro encontrado.</p>
+      {% endif %}
+    </div>
+
+  </body>
 {% endblock %}

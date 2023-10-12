@@ -7,20 +7,26 @@ body {
 }
 
 header {
-    background-color: #0096c7;
+    background-color: #3751F0;
+    display: flex;
     color: #fff;
     text-align: center;
+    border-color: #333;
+    
 }
 
 footer {
     background-color: #ccc;
     color: #333;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
 }
 
 nav {
-    background-color: #0096c7;
+    background-color: #3751F0;
     color: #fff;
     height: 50px;
     display: flex;
@@ -49,6 +55,7 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: #32bbe8;
+    border-radius: 20px;
 }
 
 nav ul li.active a {
