@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from cars.views import cars_view, new_car_view
@@ -23,5 +23,7 @@ from cars.views import cars_view, new_car_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cars/', cars_view, name='cars_list'),
-    path('new_car/', new_car_view, name='new_car')
+    path('', cars_view, name='cars_list'),
+    path('new_car/', new_car_view, name='new_car'),
+    path("__reload__/", include("django_browser_reload.urls")) # Adicionado para auto reload em ambiente de desenvolvimento
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

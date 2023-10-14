@@ -7,28 +7,37 @@ body {
 }
 
 header {
-    background-color: #3751F0;
+    background-color: #0086df;
     display: flex;
     color: #fff;
     text-align: center;
     border-color: #333;
+    align-items: center;
+    height: 60px;
     
 }
 
+main {
+    padding-bottom: 20px;
+}
+
 footer {
-    background-color: #ccc;
-    color: #333;
-    padding: 15px;
+    margin-top: auto;
+    background-color: #0086df;
+    color: #ffffff;
+    padding: 20px;
     text-align: center;
-    bottom: 0;
-    position: fixed;
-    width: 100%;
+    bottom:0;
+    display: flex;
+    justify-content: space-around;
+
+
 }
 
 nav {
-    background-color: #3751F0;
+    background-color: #0086df;
     color: #fff;
-    height: 50px;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -54,8 +63,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #32bbe8;
-    border-radius: 20px;
+    background-color: #0065a8;
+    border-radius: 10px;
 }
 
 nav ul li.active a {
