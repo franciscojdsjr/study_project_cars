@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "django_browser_reload", # Adicionado para auto reload em ambiente de desenvolvimento
     'cars',
+    'accounts',
 ]
 
 MIDDLEWARE = [
