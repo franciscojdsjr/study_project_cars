@@ -7,14 +7,15 @@ from cars.forms import CarModelForm
 # Order_by com - no inicio ordena decrecente (-model)
 
 
-def cars_view(request):
-    cars = Car.objects.all().order_by('-model')
-    search = request.GET.get('search')
-    if search:
-        cars = Car.objects.filter(model__icontains=search)
-    return render(request=request,
-                  template_name='cars.html',
-                  context={'cars': cars})
+# Modelo Antigo de View o ideal é usar Class herdando de View
+# def cars_view(request):
+#     cars = Car.objects.all().order_by('-model')
+#     search = request.GET.get('search')
+#     if search:
+#         cars = Car.objects.filter(model__icontains=search)
+#     return render(request=request,
+#                   template_name='cars.html',
+#                   context={'cars': cars})
 
 
 class CarsView(View):
