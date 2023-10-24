@@ -18,13 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from cars.views import new_car_view, CarsView
+from cars.views import NewCarView, CarsView
 from accounts.views import register_view, login_view, logout_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('cars/', CarsView.as_view(), name='cars_list'),
-    path('new_car/', new_car_view, name='new_car'),
+    path('new_car/', NewCarView.as_view(), name='new_car'),
     # Adicionado para auto reload em ambiente de desenvolvimento
     path("__reload__/", include("django_browser_reload.urls")),
     path('register/', register_view, name='register'),
