@@ -1,7 +1,11 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.views import View
+from django.views.generic import ListView
 from cars.models import Car
 from cars.forms import CarModelForm
+
 
 # Create your views here.
 # Order_by com - no inicio ordena decrecente (-model)
@@ -28,19 +32,32 @@ from cars.forms import CarModelForm
 #     return render(request, 'new_car.html', {'new_car_form': new_car_form})
 
 
-class CarsView(View):
+# class CarsView(View):
 
-    def get(self, request):
-        cars = Car.objects.all().order_by('-model')
-        search = request.GET.get('search')
+#     def get(self, request):
+#         cars = Car.objects.all().order_by('-model')
+#         search = request.GET.get('search')
 
+#         if search:
+#             cars = Car.objects.filter(model__icontains=search)
+
+#         return render(
+#                     request=request,
+#                     template_name='cars.html',
+#                     context={'cars': cars})
+
+
+class CarListView(ListView):
+    model = Car
+    template_name = 'cars.html'
+    context_object_name = 'cars'
+
+    def get_queryset(self):
+        cars = super().get_queryset().order_by('model')
+        search = self.request.GET.get('search')
         if search:
-            cars = Car.objects.filter(model__icontains=search)
-
-        return render(
-                    request=request,
-                    template_name='cars.html',
-                    context={'cars': cars})
+            cars = cars.filter(model__icontains=search)
+        return cars
 
 
 class NewCarView(View):
