@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "django_browser_reload", # Adicionado para auto reload em ambiente de desenvolvimento
+    "django_browser_reload",  # Adicionado para auto reload em ambiente de desenvolvimento
     'cars',
     'accounts',
 ]
@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "django_browser_reload.middleware.BrowserReloadMiddleware" # Adicionado para auto reload em ambiente de desenvolvimento
+    "django_browser_reload.middleware.BrowserReloadMiddleware"  # Adicionado para auto reload em ambiente de desenvolvimento
 ]
 
 ROOT_URLCONF = 'app.urls'
