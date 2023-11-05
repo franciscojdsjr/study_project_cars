@@ -3,6 +3,7 @@
 # from django.shortcuts import render, redirect
 # from django.views import View
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 from cars.models import Car
 from cars.forms import CarModelForm
 
@@ -90,7 +91,10 @@ class CarUpdateView(UpdateView):
     model = Car
     form_class = CarModelForm
     template_name = 'car_update.html'
-    success_url = '/cars/'
+    # success_url = '/cars/'
+
+    def get_success_url(self):
+        return reverse_lazy('car_detail', kwargs={'pk': self.object.pk})
 
 
 class CarDeleteView(DeleteView):
