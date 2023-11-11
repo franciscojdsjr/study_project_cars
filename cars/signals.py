@@ -10,7 +10,10 @@ def car_pre_save(sender, instance, **kargs):
 
 @receiver(post_save, sender=Car)
 def car_post_save(sender, instance, **kargs):
-    print('### POST SAVE ###')
+    cars_count = Car.objects.all().count()
+    cars_value = Car.objects.aaggregate(
+        
+    )
 
 
 @receiver(pre_delete, sender=Car)
