@@ -29,7 +29,7 @@ urlpatterns = [
     path('car/<int:pk>/update/', CarUpdateView.as_view(), name='car_update'),
     path('car/<int:pk>/delete/', CarDeleteView.as_view(), name='car_delete'),
     # Adicionado para auto reload em ambiente de desenvolvimento
-    path("__reload__/", include("django_browser_reload.urls")),
+    #path("__reload__/", include("django_browser_reload.urls")),
     path('register/', register_view, name='register'),
     path('login/', login_view, name='login'),
     path('logout/', logout_view, name='logout')
