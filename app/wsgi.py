@@ -15,3 +15,6 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'app.settings')
 
 application = get_wsgi_application()
 
+
+#Rodar Servidor 
+#uwsgi --http :8000 --module app.wsgi --static-map /static=/var/www/study_project_cars/static/ --chmod-socket=666
