@@ -23,3 +23,5 @@ application = get_wsgi_application()
 
 # uwsgi --socket /var/www/study_project_cars/carros.sock --module app.wsgi --chmod-socket=666
 
+# Rodar Servidor Nginx com o carros_uwsgi que criou no raiz
+# uwsgi --ini carros_uwsgi.ini
