@@ -25,3 +25,7 @@ application = get_wsgi_application()
 
 # Rodar Servidor Nginx com o carros_uwsgi que criou no raiz
 # uwsgi --ini carros_uwsgi.ini
+
+# Reiniciar sudo systemctl restart nginx
+
+# a configuração do nginx fica em  /etc/nginx/sites-available/
