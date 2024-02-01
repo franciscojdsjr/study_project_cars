@@ -29,3 +29,5 @@ application = get_wsgi_application()
 # Reiniciar sudo systemctl restart nginx
 
 # a configuração do nginx fica em  /etc/nginx/sites-available/
+
+
